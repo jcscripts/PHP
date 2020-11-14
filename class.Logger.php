@@ -1,6 +1,6 @@
 <?php
 /*
- * Logger by JC Scripts - very simple and minimalistic logging framework for PHP
+ * Logger by JC Scripts - Simple and minimalistic logging framework for PHP
  * Read full documentation at https://jcscripts.online/logger
  * @version v1.0
  * Open source and free to use
