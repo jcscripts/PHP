@@ -21,7 +21,7 @@ namespace JCScripts
 		private $originator = null;
 		
 		// Change to required values accordingly 
-		const LOG_TS_FORMAT = "[d-m-Y H:m:s]";
+		const LOG_TS_FORMAT = "[d-m-Y H:i:s]";
 		
 		// Path of output log file along with directory (and extension) 
 		// Spaces are not recommended. Instead use symbols like - _
