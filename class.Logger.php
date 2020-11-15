@@ -115,12 +115,14 @@ namespace JCScripts
 		}
 		
 		/*
-		 * System method to free up opened file resources
+		 * Method to safely close and free up all open resources created by Logger
+		 * Recommended to call this method when you are done with Logger
 		 */
 		public function close()
 		{
+			unset($this->originator);
 			fclose($this->logFileHandler);
-			$this->logFileHandler = null;
+			unset($this->logFileHandler);
 		}
 	}
 }
