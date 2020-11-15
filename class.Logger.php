@@ -115,7 +115,7 @@ namespace JCScripts
 		}
 		
 		/*
-		 * Method to safely close and free up all open resources created by Logger
+		 * Method to safely close and free up base resources created by Logger
 		 * Recommended to call this method when you are done with Logger
 		 */
 		public function close()
