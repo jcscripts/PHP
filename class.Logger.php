@@ -33,7 +33,7 @@ namespace JCScripts
 		public function __construct()
 		{
 			$this->logFile  =  (!empty(trim($this->logFile))) ? $this->logfile : (self::DEFAULT_FILE);
-			$this->originator = ucfirst(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME));
+			$this->originator = basename(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0]['file']);
 			$this->preHook();
 		}
 		
@@ -110,17 +110,19 @@ namespace JCScripts
 		private function event($logLevel, $message)
 		{
 			$this->preHook();
-			$parsedMsg = date(self::LOG_TS_FORMAT) . " " . $this->originator . ": " . $logLevel . " - " . $message . PHP_EOL;
+			$parsedMsg = date(self::LOG_TS_FORMAT) . " " . $logLevel . " (" .$this->originator. ") - " . $message . PHP_EOL;
 			fwrite($this->logFileHandler, $parsedMsg);
 		}
 		
 		/*
-		 * System method to free up opened file resources
+		 * Method to safely close and free up all open resources created by Logger
+		 * Recommended to call this method when you are done with Logger
 		 */
 		public function close()
 		{
+			unset($this->originator);
 			fclose($this->logFileHandler);
-			$this->logFileHandler = null;
+			unset($this->logFileHandler);
 		}
 	}
 }
