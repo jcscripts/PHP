@@ -1,6 +1,6 @@
 <?php
 /*
- * Logger by JC Scripts - very simple and minimalistic logging framework for PHP
+ * Logger by JC Scripts - Simple and minimalistic logging framework for PHP
  * Read full documentation at https://jcscripts.online/logger
  * @version v1.0
  * Open source and free to use
@@ -21,7 +21,7 @@ namespace JCScripts
 		private $originator = null;
 		
 		// Change to required values accordingly 
-		const LOG_TS_FORMAT = "[d-m-Y H:m:s]";
+		const LOG_TS_FORMAT = "[d-m-Y H:i:s]";
 		
 		// Path of output log file along with directory (and extension) 
 		// Spaces are not recommended. Instead use symbols like - _
