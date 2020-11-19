@@ -32,24 +32,29 @@ Example:
 --------
 
 <?php
-include_once( 'Logger.php' );
+include_once('Logger.php');
 $log = new JCScripts\Logger();
 
-function divide($a, $b) {
-$value = null;
-$log->info('Entered divide() method');
-$log->debug("Value of a=${a}, b=${b}");
-if($b == 0) {
-$log->error('Divide by zero error, parameter #2 should not be 0');
-} else {
-$value =$a/$b;
-$log->debug("Return value is ${value}");
+function divide($a, $b)
+{
+    $value = null;
+    $log->info('Entered divide() method');
+    $log->debug("Value of a=${a}, b=${b}");
+    if ($b == 0) {
+        $log->error('Divide by zero error, parameter #2 should not be 0');
+    } else {
+        $value = $a / $b;
+        $log->debug("Return value is ${value}");
+    }
+    $log->info('Exit divide() method');
+    return $value;
 }
-$log->info('Exit divide() method');
-return $value;}
 // Example call #1
 echo divide(10, 2);
 
 // Example call #2
-echo divide (10, 0);
+echo divide(10, 0);
 ?>
+
+Output in log file:
+-------------------
