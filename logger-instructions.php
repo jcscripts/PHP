@@ -37,6 +37,7 @@ $log = new JCScripts\Logger();
 
 function divide($a, $b)
 {
+    global $log;
     $value = null;
     $log->info('Entered divide() method');
     $log->debug("Value of a=${a}, b=${b}");
@@ -58,3 +59,16 @@ echo divide(10, 0);
 
 Output in log file:
 -------------------
+For Example call #1:
+
+19-11-2020 22:18:36 [INFO] - Entered divide() method
+19-11-2020 22:18:36 [DEBUG] - Value of a=10, b=2
+19-11-2020 22:18:36 [DEBUG] - Return value is 5
+19-11-2020 22:18:36 [INFO] - Exit divide() method
+
+For example call #2:
+
+19-11-2020 22:18:36 [INFO] - Entered divide() method
+19-11-2020 22:18:36 [DEBUG] - Value of a=10, b=0
+19-11-2020 22:18:36 [ERROR] - Divide by zero error, parameter #2 should not be 0
+19-11-2020 22:18:36 [INFO] - Exit divide() method
