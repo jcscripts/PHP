@@ -1,4 +1,3 @@
-
 <?php
 /*
  * Logger by JC Scripts - Simple and minimalistic logging framework for PHP
